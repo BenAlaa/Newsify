@@ -1,0 +1,29 @@
+.login-page-container{
+    height: 100vh;
+    padding: 0 !important;
+    overflow: hidden;
+}
+.forms-container{
+    height: 100vh;
+}
+.image-container{
+    height: 100vh;
+    background-color: rgb(253,77,98);
+    position: relative;
+    /* flex-direction: column;
+    justify-content: center; */
+    /* align-items: center; */
+    /* width: 100%; */
+    /* display: flex !important;
+    flex-direction: column !important;
+    justify-content: center; */
+    /* justify-items: center; */
+}
+.image-container img{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    /* vertical-align: middle !important; */
+}
