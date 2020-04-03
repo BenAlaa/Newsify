@@ -1,0 +1,3 @@
+{
+    "dbUri" : "mongodb://localhost/newsify"
+}
