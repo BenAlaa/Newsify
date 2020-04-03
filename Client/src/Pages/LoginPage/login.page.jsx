@@ -9,12 +9,12 @@ const LoginPage = ({isLoggedin}) => {
     return ( 
         <div className="login-page-container container-fluid">
             <Row>
-                <Col lg={6} xl={5}>
+                <Col lg={6} >
                     <div className="forms-container">
 
                     </div>
                 </Col>
-                <Col lg={6} xl={7}>
+                <Col lg={6} >
                     <div className="image-container d-none d-lg-block">
                         <img className="col-12 img-fluid" src={background} />
                     </div>
