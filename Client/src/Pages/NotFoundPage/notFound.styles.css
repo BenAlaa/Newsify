@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Da+2');
+.notfound-container{
+    height: 100vh;
+    padding-top: 20vh;
+    background-color: rgb(253,77,98);
+    color: rgb(255,255,255);
+    font-family: 'Baloo Da 2', cursive;
+    
+}
+.not-found-404{
+    font-weight: 800 !important;
+    font-size: 200px !important;
+    
+}
+.notfound-container img {
+    width: 100%
+}
+.notfound-container h1{
+    margin-top: 40px !important;
+    display: flex;
+    justify-content: center;
+}
+.notfound-container p{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px !important;
+}
+.notfound-container a{
+    height: 50px;
+    width: 200px;
+    margin-top: 50px;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    color: rgb(255,255,255);
+    font-family: 'Baloo Da 2', cursive;
+    background-color: rgb(45, 44, 58);
+    border-radius: 25px;
+    transition: all 250ms ease-in-out;
+    -webkit-box-shadow: 6px 0px 19px 0px rgba(50, 50, 50, 0.38);
+    -moz-box-shadow:    6px 0px 19px 0px rgba(50, 50, 50, 0.38);
+    box-shadow:         6px 0px 19px 0px rgba(50, 50, 50, 0.38);
+}
+.notfound-container a:hover{
+    text-decoration: none;
+    color: rgb(255,255,255);
+    background-color: rgb(253, 77, 98);
+    transform: scale(1.05);
+}
+.link-container{
+    display: flex;
+    justify-content: center;
+}
