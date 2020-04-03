@@ -19,7 +19,6 @@ export function setJwt(jwt) {
     axios.defaults.headers.common[tokenKey] = jwt;
 }
 axios.defaults.headers.common[tokenKey] = getJwt();
-
 export default {
     get: axios.get,
     post: axios.post,
