@@ -1,0 +1,12 @@
+.alert {
+    height: 10px;
+    width: 100%;
+    font-size: 10px;
+    
+    text-align: left;
+    padding: 0px;
+    margin-top: -10px;
+ }
+ .error{
+     border-color: red;
+ }
