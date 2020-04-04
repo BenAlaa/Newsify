@@ -4,7 +4,7 @@ import {Container, Row, Col} from 'styled-bootstrap-grid';
 import logo from './Assets/404.png'
 import "./notFound.styles.css";
 
-const NotFound = () => {
+const NotFound = (props) => {
     return (
         <div className="notfound-container">
             <Container>

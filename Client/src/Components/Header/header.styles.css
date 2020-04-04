@@ -4,6 +4,7 @@
     /* padding: 0px !important; */
     padding-left: calc(10vw) !important;
     padding-right: calc(10vw) !important;
+    /* background-color: rgba(255, 255, 255, 0.103) !important; */
     -webkit-box-shadow: -1px 6px 39px -25px rgba(0,0,0,0.57);
     -moz-box-shadow:    -1px 6px 39px -25px rgba(0,0,0,0.57);
     box-shadow:         -1px 6px 39px -25px rgba(0, 0, 0, 0.438);
@@ -14,6 +15,12 @@
     font-weight: 500;
     color: rgb(112, 112, 112);
     margin-left: 10px;
+}
+.navbar-brand img{
+    border-radius: 5px;
+    -webkit-box-shadow: -1px 0px 12px 0px rgba(0,0,0,0.31);
+    -moz-box-shadow: -1px 0px 12px 0px rgba(0,0,0,0.31);
+    box-shadow: -1px 0px 12px 0px rgba(0,0,0,0.31);
 }
 .navbar-nav .nav-item {
     margin-right: 20px;
