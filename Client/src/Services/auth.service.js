@@ -1,9 +1,10 @@
 import jwt from 'jsonwebtoken';
 import jwtDecode from 'jwt-decode';
-import http from './http.service';
+import http, {setJwt} from './http.service';
 import { apiUrl, tokenKey} from '../config.json';
 
 const apiEndpoint = apiUrl + "/auth";
+setJwt(getJwt());
 
 async function login(email, password) {
     const {data: response} = await http.post(apiEndpoint, {email, password});
@@ -40,8 +41,8 @@ function getCurrentUser() {
     }
 }
 
-function getJwt(tokenKey) {
-    return localStorage.getItem(tokenKey);
+function getJwt() {
+    return localStorage.getItem('x-auth-token');
 }
 
 export{
