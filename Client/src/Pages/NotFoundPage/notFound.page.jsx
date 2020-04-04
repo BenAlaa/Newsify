@@ -1,5 +1,4 @@
 import * as React from 'react';
-import {Link} from 'react-router-dom';
 import {Container, Row, Col} from 'styled-bootstrap-grid';
 import logo from './Assets/404.png'
 import "./notFound.styles.css";

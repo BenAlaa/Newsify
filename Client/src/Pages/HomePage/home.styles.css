@@ -1,0 +1,6 @@
+.home-container {
+    height: 100vh;
+    padding-top: 150px;
+    padding-left: calc(10vw) !important;
+    padding-right: calc(10vw) !important;
+}
