@@ -10,7 +10,7 @@ const NotFound = () => {
             <Container>
                 <Row>
                     <Col xs={12} sm={10} md={8} lg={8}  xl={8} xsOffset={0} smOffset={1} mdOffset={2} lgOffset={2} xlOffset={2}>
-                        <img src={logo}></img>
+                        <img src={logo} alt="404"></img>
                         <h1>Oops! Page Not Be Found</h1>
                         <p>Sorry but the page you are looking for does not exist, have been removed, name changed or is temporarily unavailable</p>
                         <div className="link-container">

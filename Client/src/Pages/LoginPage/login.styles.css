@@ -1,29 +1,185 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Da+2');
 .login-page-container{
     height: 100vh;
     padding: 0 !important;
     overflow: hidden;
 }
-.forms-container{
+.left-section{
     height: 100vh;
 }
-.image-container{
+.right-section{
     height: 100vh;
     background-color: rgb(253,77,98);
     position: relative;
-    /* flex-direction: column;
-    justify-content: center; */
-    /* align-items: center; */
-    /* width: 100%; */
-    /* display: flex !important;
-    flex-direction: column !important;
-    justify-content: center; */
-    /* justify-items: center; */
+    overflow: hidden;
 }
-.image-container img{
+.right-section img{
     width: 100%;
     position: absolute;
     top: 0;
     bottom: 0;
     margin: auto;
-    /* vertical-align: middle !important; */
+    transition: all 250ms ease-in-out;
+}
+.right-section img:hover {
+    transform: scale(1.05);
+}
+.forms-container{
+    width: 100%;
+    margin-top: 20vh;
+    height: 60vh;
+}
+.login-tap, .register-tap{
+    height: 60px;
+    width: 100%;
+    font-family: 'Baloo Da 2', cursive;
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: 500;
+    color: rgba(45, 44, 58, 0.5);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    transition: all 250ms ease-in-out;
+}
+.login-tap {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 10px;
+    -webkit-box-shadow: -4px -8px 10px 0px rgba(117, 117, 117, 0.1);
+    -moz-box-shadow:    -4px -8px 10px 0px rgba(117, 117, 117, 0.1);
+    box-shadow:         -4px -8px 10px 0px rgba(117, 117, 117, 0.1);  
+}
+
+.register-tap{
+    border-top-right-radius: 20px;
+    border-top-left-radius: 10px;
+    background-color: rgb(253,77,98);
+    color: rgb(255,255,255);
+    -webkit-box-shadow: 7px -3px 14px 0px rgba(50, 50, 50, 0.2);
+    -moz-box-shadow:    7px -3px 14px 0px rgba(50, 50, 50, 0.2);
+    box-shadow:         7px -3px 14px 0px rgba(50, 50, 50, 0.2);
+}
+.login-form-content, .register-form-content{
+    height: 60vh;
+    padding: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: all 250ms ease-in-out;
+    -webkit-box-shadow: 0px 16px 19px 0px rgba(50, 50, 50, 0.2);
+    -moz-box-shadow:    0px 16px 19px 0px rgba(50, 50, 50, 0.2);
+    box-shadow:         0px 16px 19px 0px rgba(50, 50, 50, 0.2);
+}
+
+.register-form-content {
+    background-color: rgb(253,77,98);
+}
+
+.form-group {
+    margin-bottom: 20px !important;
+}
+.login-form-content label{
+    color: rgba(45, 44, 58, 0.7);
+}
+.login-form-content input{
+    height: 40px !important;
+    border-radius: 20px;
+    border-color: rgba(45, 44, 58, 0.5);
+    border-width: 2px;
+    border-style: solid;
+    transition: all 250ms ease-in-out;
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(136, 135, 135, 0.2);
+    -moz-box-shadow:    0px 5px 10px 0px rgba(136, 135, 135, 0.2);
+    box-shadow:         0px 5px 10px 0px rgba(136, 135, 135, 0.2);
+}
+.login-form-content input:focus{
+    background-color: rgba(241, 219, 221, 0.253);
+    border-color: rgba(253, 77, 97, 0.801);
+    border-width: 3px !important;
+    outline:0px !important;
+    -webkit-appearance:none;
+    box-shadow: none !important;
+}
+.login-form-content button {
+    font-size: 18px;
+    font-family: 'Baloo Da 2', cursive;
+    height: 40px;
+    width: 200px;
+    display: flex;
+    margin:auto;
+    justify-content: center;
+    padding: 5px 20px;
+    border: none;
+    background-color: rgb(253, 77, 98);
+    color: #fff;
+    border-radius: 20px;
+    margin-top: 50px;
+    transition: all 250ms ease-in-out;
+    -webkit-box-shadow: 0px 5px 20px 1px rgba(253, 77, 98);
+    -moz-box-shadow: 0px 5px 20px 1px rgba(253, 77, 98);
+    box-shadow: 0px 5px 20px 1px rgba(253, 77, 98, 0.7);
+    cursor: pointer;
+}
+.login-form-content button:hover {
+    transform: scale(1.05);
+    background-color: rgb(58, 58, 58);
+    -webkit-box-shadow: 0px 5px 20px 1px rgba(58, 58, 58);
+    -moz-box-shadow: 0px 5px 20px 1px rgba(58, 58, 58);
+    box-shadow: 0px 5px 20px 1px rgba(58, 58, 58, 0.7);
+}
+.login-form-content button:focus {
+    outline: none;
+}
+
+.register-form-content label {
+    color: rgb(255,255,255);
+}
+.register-form-content input{
+    height: 40px !important;
+    border-radius: 20px;
+    border-color: rgba(88, 88, 88, 0.5);
+    border-width: 2px;
+    border-style: solid;
+    transition: all 250ms ease-in-out;
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(136, 135, 135, 0.2);
+    -moz-box-shadow:    0px 5px 10px 0px rgba(136, 135, 135, 0.2);
+    box-shadow:         0px 5px 10px 0px rgba(136, 135, 135, 0.2);
+}
+.register-form-content input:focus{
+    background-color: rgba(253, 253, 253, 0.589);
+    border-color: rgba(253, 77, 97, 0.801);
+    border-width: 3px !important;
+    outline:0px !important;
+    -webkit-appearance:none;
+    box-shadow: none !important;
+}
+.register-form-content button{
+    font-size: 18px;
+    font-family: 'Baloo Da 2', cursive;
+    height: 40px;
+    width: 200px;
+    display: flex;
+    margin:auto;
+    justify-content: center;
+    padding: 5px 20px;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    margin-top: 50px;
+    transition: all 250ms ease-in-out;
+    background-color: rgb(58, 58, 58);
+    -webkit-box-shadow: 0px 5px 20px 1px rgba(58, 58, 58);
+    -moz-box-shadow: 0px 5px 20px 1px rgba(58, 58, 58);
+    box-shadow: 0px 5px 20px 1px rgba(58, 58, 58, 0.7);
+    cursor: pointer;
+}
+.register-form-content button:hover {
+    transform: scale(1.02);
+    background-color: rgb(255, 255, 255);
+    color: rgb(58, 58, 58);
+    -webkit-box-shadow: 0px 5px 20px 1px rgba(58, 58, 58);
+    -moz-box-shadow: 0px 5px 20px 1px rgba(58, 58, 58);
+    box-shadow: 0px 5px 20px 1px rgba(58, 58, 58, 0.7);
+}
+.register-form-content button:focus {
+    outline: none;
 }
