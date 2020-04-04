@@ -2,10 +2,17 @@ import { Component } from 'react';
 import Joi from 'joi-browser';
 
 class Form extends Component {
-    state = { 
-        data:{},
-        errors:{}
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            data:{},
+            errors:{}
+        }
+        this.handleChange = this.handleChange.bind(this);
+        this.validate = this.validate.bind(this);
+        this.validateProperty = this.validateProperty.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
     validate = () => {
 		const options = { abortEarly: false };
 		const { error } = Joi.validate(this.state.data, this.schema, options);
@@ -25,10 +32,11 @@ class Form extends Component {
 
     };
     handleSubmit = e => {
-		e.preventDefault();
-
-	                                               
-
+        e.preventDefault();
+        const errors = this.validate();
+        if(errors) {
+            return this.setState({errors});
+        }
 		this.doSubmit();
     };
     handleChange = ({ currentTarget: input }) => {

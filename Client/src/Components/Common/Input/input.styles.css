@@ -1,11 +1,13 @@
 .alert {
-    height: 10px;
+    height: 25px;
     width: 100%;
-    font-size: 10px;
-    
+    font-size: 12px;
     text-align: left;
-    padding: 0px;
-    margin-top: -10px;
+    padding: 2px !important;
+    border-radius: 13px !important;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
  }
  .error{
      border-color: red;
