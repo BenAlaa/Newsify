@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Da+2');
+.register-form-title{
+    display: flex;
+    justify-content: center;
+    font-family: 'Baloo Da 2', cursive;
+    font-size: 40px;
+    font-weight: 700;
+    color: rgba(255,255,255);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
