@@ -5,6 +5,9 @@ import logo from './Assets/404.png'
 import "./notFound.styles.css";
 
 const NotFound = (props) => {
+    const handelBackToHome = () => {
+        props.history.push('/home');
+    }
     return (
         <div className="notfound-container">
             <Container>
@@ -14,7 +17,7 @@ const NotFound = (props) => {
                         <h1>Oops! Page Not Be Found</h1>
                         <p>Sorry but the page you are looking for does not exist, have been removed, name changed or is temporarily unavailable</p>
                         <div className="link-container">
-                            <Link to="/home" >Back to home page</Link>
+                            <div className="back-to-home-btn" onClick={() => handelBackToHome()} >Back to home page</div>
                         </div>
                     </Col>
                 </Row>
