@@ -37,7 +37,7 @@ class LoginPage extends React.Component {
         return ( 
             <div className="login-page-container container-fluid">
                 <Row>
-                    <Col lg={12} xl={7} >
+                    <Col lg={12} xl={6} >
                         <div className="left-section ">
                             <Container>
                                 <Row>
@@ -73,7 +73,7 @@ class LoginPage extends React.Component {
 
                         </div>
                     </Col>
-                    <Col xl={5} >
+                    <Col xl={6} >
                         <div className="right-section d-lg-none d-xl-block">
                             <img className="col-12 img-fluid" src={background} alt="logo"/>
                         </div>

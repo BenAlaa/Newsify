@@ -60,7 +60,7 @@
     box-shadow:         7px -3px 14px 0px rgba(50, 50, 50, 0.2);
 }
 .login-form-content, .register-form-content{
-    height: 60vh;
+    height: 55vh;
     padding: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;

@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Da+2');
+.header-container{
+    height: 70px;
+    /* padding: 0px !important; */
+    padding-left: calc(10vw) !important;
+    padding-right: calc(10vw) !important;
+    -webkit-box-shadow: -1px 6px 39px -25px rgba(0,0,0,0.57);
+    -moz-box-shadow:    -1px 6px 39px -25px rgba(0,0,0,0.57);
+    box-shadow:         -1px 6px 39px -25px rgba(0, 0, 0, 0.438);
+}
+.navbar-brand span{
+    font-family: 'Baloo Da 2', cursive;
+    font-size: 30px;
+    font-weight: 500;
+    color: rgb(112, 112, 112);
+    margin-left: 10px;
+}
+.navbar-nav .nav-item {
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 20px;
+    font-family: 'Baloo Da 2', cursive;
+}
+.dropdown-menu .active{
+    background-color: rgb(253,77,98) !important;
+}
+.dropdown-item{
+    font-family: 'Baloo Da 2', cursive;
+    transition: all 250ms ease-in-out;
+}
+.dropdown-item:hover {
+    background-color: rgb(253,77,98) !important;
+    color: rgb(255,255,255) !important;
+}
