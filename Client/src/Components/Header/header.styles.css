@@ -10,9 +10,6 @@
     box-shadow:         -1px 6px 39px -25px rgba(0, 0, 0, 0.438);
     background-color: rgb(255,255,255);
 }
-.header-container nav{
-    background-color: rgb(255,255,255) !important;
-}
 .navbar-brand span{
     font-family: 'Baloo Da 2', cursive;
     font-size: 30px;

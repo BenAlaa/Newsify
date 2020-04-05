@@ -5,7 +5,7 @@ import './header.styles.css';
 
 const Header = ({ user }) => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light  fixed-top header-container">
+        <nav className="navbar navbar-expand-lg navbar-light   fixed-top header-container">
             <NavLink className="navbar-brand" to="/home">
                 <img src={logo} width="40" height="40" className="d-inline-block align-top" alt="logo" />
                 <span>Newsify</span>
