@@ -8,6 +8,10 @@
     -webkit-box-shadow: -1px 6px 39px -25px rgba(0,0,0,0.57);
     -moz-box-shadow:    -1px 6px 39px -25px rgba(0,0,0,0.57);
     box-shadow:         -1px 6px 39px -25px rgba(0, 0, 0, 0.438);
+    background-color: rgb(255,255,255);
+}
+.header-container nav{
+    background-color: rgb(255,255,255) !important;
 }
 .navbar-brand span{
     font-family: 'Baloo Da 2', cursive;
@@ -21,6 +25,10 @@
     -webkit-box-shadow: -1px 0px 12px 0px rgba(0,0,0,0.31);
     -moz-box-shadow: -1px 0px 12px 0px rgba(0,0,0,0.31);
     box-shadow: -1px 0px 12px 0px rgba(0,0,0,0.31);
+}
+.navbar-collapse{
+    background-color: rgb(255,255,255);
+    border-radius: 20px;
 }
 .navbar-nav .nav-item {
     margin-right: 20px;

@@ -10,7 +10,7 @@ const Header = ({ user }) => {
                 <img src={logo} width="40" height="40" className="d-inline-block align-top" alt="logo" />
                 <span>Newsify</span>
             </NavLink>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse " id="navbarNavDropdown">
