@@ -21,7 +21,6 @@ class HomePage extends React.Component {
         this.loadNews();
     }
     handlePageChange = page => {
-        console.log('clicked page: ', page )
         this.setState({currentPage: page, isLoading:true}, () => {
             this.loadNews(page)
         });
@@ -29,7 +28,6 @@ class HomePage extends React.Component {
     async loadNews(page) {
         const {currentPage, pageSize} = this.state;
         page = page ? page : currentPage;
-        console.log('current page:', currentPage)
         getNews(currentPage, pageSize)
         .then(response => {
             if(response.data.status === 200) 
@@ -39,14 +37,26 @@ class HomePage extends React.Component {
                     currentPage: page,
                     isLoading: false
                 });
-            this.setState({error: 'SomeThing Wrong happened, Please try again'});
+            else this.setState({isLoading: false, error: 'SomeThing Wrong happened, Please try again'});
         })
-        .catch(err => this.setState({error: "Could not load news, Check your connection.."})) ; 
+        .catch(err => this.setState({isLoading: false, error: "SomeThing Wrong happened, Please try again..."}));
     }
     render() { 
-        const {news, currentPage, totalNewsCount, pageSize, isLoading} = this.state
+        const {news, currentPage, totalNewsCount, pageSize, isLoading, error} = this.state;
         return ( 
             <div className="home-container">
+                { !news && 
+                    <div className="message-container row">
+                        <Col col={12}>
+                            <div className="warrning ">You didn't subscribe to any source!, Please subcribe first</div>
+                        </Col>
+                        
+                        <div className="go-to-sources-btn" onClick={() => this.props.history.push('/sources')} >Go to Sources</div>
+                    </div>
+                }
+                {error !== '' && 
+                    <div className="error-container">{error}</div>
+                }
                 {isLoading && 
                     <div className="loader-container">
                         <div className="spinner-border text-secondary" role="status">
@@ -54,38 +64,42 @@ class HomePage extends React.Component {
                         </div>
                     </div>
                 }
-                {!isLoading && <div className="news-container">
-                    <Row>
-                        {news.map(news => {
-                            const {title, description, content, url, urlToImage, source, publishedAt} = news;
-                            return (
-                                <Col col={12} xs={12} sm={12} md={12} lg={6} xl={4} key={news.title}>
-                                    <NewsCard
-                                        title={title}
-                                        description={description}
-                                        content={content}
-                                        url={url}
-                                        urlToImage={urlToImage}
-                                        source={source.name}
-                                        publishedAt={publishedAt}
-                                     />
-                                </Col>
-                                
-                            )
-                        })}
-                    </Row>
-                    
-                </div>}
+                {!isLoading && error === '' && news?.length > 0 &&
+                    <div className="news-container">
+                        <Row>
+                            {news.map(news => {
+                                const {title, description, content, url, urlToImage, source, publishedAt} = news;
+                                return (
+                                    <Col col={12} xs={12} sm={12} md={12} lg={6} xl={4} key={news.title}>
+                                        <NewsCard
+                                            title={title}
+                                            description={description}
+                                            content={content}
+                                            url={url}
+                                            urlToImage={urlToImage}
+                                            source={source.name}
+                                            publishedAt={publishedAt}
+                                        />
+                                    </Col>
+                                    
+                                )
+                            })}
+                        </Row>
+                        
+                    </div>
+                }
                 <div className="pagination-container">
-                    {!isLoading && <Pagination
-                        activePage={currentPage}
-                        itemsCountPerPage={pageSize}
-                        totalItemsCount={totalNewsCount}
-                        pageRangeDisplayed={10}
-                        onChange={this.handlePageChange}
-                        itemClass="page-item"
-                        linkClass="page-link"
-                    />}
+                    {!isLoading && error === '' && news &&
+                        <Pagination
+                            activePage={currentPage}
+                            itemsCountPerPage={pageSize}
+                            totalItemsCount={totalNewsCount}
+                            pageRangeDisplayed={10}
+                            onChange={this.handlePageChange}
+                            itemClass="page-item"
+                            linkClass="page-link"
+                        />
+                    }
                 </div>
             </div>
         );
