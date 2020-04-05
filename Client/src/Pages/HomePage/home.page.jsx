@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col} from 'styled-bootstrap-grid';
 import NewsCard from '../../Components/NewsCard/newsCard.component';
+import Pagination from "react-js-pagination";
 import {getNews} from '../../Services/news.service';
 import './home.styles.css';
 
@@ -10,7 +11,8 @@ class HomePage extends React.Component {
         this.state = {
             news:[],
             currentPage: 1,
-            pageSize: 20,
+            pageSize: 12,
+            totalNewsCount: 0,
             isLoading: true,
             error: ''
         }
@@ -18,23 +20,41 @@ class HomePage extends React.Component {
     async componentDidMount() {
         this.loadNews();
     }
-    // shouldComponentUpdate(){
-    //     return false;
-    // }
-    async loadNews() {
-        getNews()
+    handlePageChange = page => {
+        console.log('clicked page: ', page )
+        this.setState({currentPage: page, isLoading:true})
+        this.loadNews(page)
+
+    };
+    async loadNews(page) {
+        const {currentPage, pageSize} = this.state;
+        page = page ? page : currentPage;
+        console.log('current page:', currentPage)
+        getNews(currentPage, pageSize)
         .then(response => {
             if(response.data.status === 200) 
-                this.setState({news: response.data.data.articles, isLoading: false});
+                this.setState({
+                    news: response.data.data.articles,
+                    totalNewsCount: response.data.data.totalResults, 
+                    currentPage: page,
+                    isLoading: false
+                });
             this.setState({error: 'SomeThing Wrong happened, Please try again'});
         })
         .catch(err => this.setState({error: "Could not load news, Check your connection.."})) ; 
     }
     render() { 
-        const {news} = this.state
+        const {news, currentPage, totalNewsCount, pageSize, isLoading} = this.state
         return ( 
             <div className="home-container">
-                <div className="news-container">
+                {isLoading && 
+                    <div className="loader-container">
+                        <div className="spinner-border text-secondary" role="status">
+                            <span className="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                }
+                {!isLoading && <div className="news-container">
                     <Row>
                         {news.map(news => {
                             const {title, description, content, url, urlToImage, source, publishedAt} = news;
@@ -55,6 +75,17 @@ class HomePage extends React.Component {
                         })}
                     </Row>
                     
+                </div>}
+                <div className="pagination-container">
+                    {!isLoading && <Pagination
+                        activePage={currentPage}
+                        itemsCountPerPage={pageSize}
+                        totalItemsCount={totalNewsCount}
+                        pageRangeDisplayed={10}
+                        onChange={this.handlePageChange}
+                        itemClass="page-item"
+                        linkClass="page-link"
+                    />}
                 </div>
             </div>
         );

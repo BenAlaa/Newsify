@@ -4,3 +4,36 @@
     padding-left: calc(10vw) !important;
     padding-right: calc(10vw) !important;
 }
+.loader-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 20vh;
+}
+.spinner-border{
+    height: 150px !important;
+    width: 150px !important;
+    font-size: 50px;
+    color: rgb(253,77,98) !important;
+}
+.spinner-border span{
+    color: rgb(253,77,98) !important;
+}
+.pagination-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.pagination-container .pagination .page-item .page-link {
+    color: rgb(253,77,98);
+}
+.pagination-container .pagination .page-item .undefined {
+    color: rgb(255,255,255);
+    background-color: rgb(253,77,98);
+    outline: rgb(253,77,98);
+    border-color: rgb(187, 187, 187);
+}
+.pagination-container .pagination .page-item .active{
+    background-color: rgb(253,77,98) !important;
+    color: rgb(255,255,255) !important;
+}

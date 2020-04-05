@@ -17,29 +17,14 @@
   },
   "homepage": "https://github.com/BenAlaa/Newsify#readme",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.28",
-    "@fortawesome/free-brands-svg-icons": "^5.13.0",
-    "@fortawesome/free-solid-svg-icons": "^5.13.0",
-    "@fortawesome/react-fontawesome": "^0.1.9",
     "@hapi/joi": "^17.1.1",
     "bcrypt": "^4.0.1",
-    "bootstrap": "^4.4.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "font-awesome": "^4.7.0",
-    "joi-browser": "^13.4.0",
-    "jquery": "^3.4.1",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
-    "lodash": "^4.17.15",
-    "moment": "^2.24.0",
     "mongoose": "^5.9.7",
     "newsapi": "^2.4.0",
-    "nodemon": "^2.0.2",
-    "popper.js": "^1.16.1",
-    "prop-types": "^15.7.2",
-    "resolve-url-loader": "^3.1.1",
-    "styled-bootstrap-grid": "^3.1.0",
-    "styled-components": "^5.0.1"
+    "nodemon": "^2.0.2"
   }
 }
