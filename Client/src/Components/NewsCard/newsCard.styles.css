@@ -9,6 +9,7 @@
     background-color: rgba(255,255,255,1);
     transition: all 250ms ease-in-out;
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     -webkit-box-shadow: -1px 0px 21px 0px rgba(0,0,0,0.31);
     -moz-box-shadow: -1px 0px 21px 0px rgba(0,0,0,0.31);
@@ -19,14 +20,14 @@
     padding:20px;
     bottom:0px;
     width:100%;
-    height:20%;
+    height:30%;
     border-radius: 20px;
     border-color: rgb(255,255,255);
     border-width: 2px;
     border-style: solid;
     background-color:rgb(253,77,98);
     z-index:10;
-    transition: all 250ms ease-in-out;
+    transition: all 300ms ease-in-out;
     overflow: auto;
 }
 .news-subCars-container::-webkit-scrollbar {
@@ -35,10 +36,9 @@
 .news-card-container:hover .news-subCars-container{
     height: 70%;
     border-radius: 20px;
-    transition: all 250ms ease-in-out;
     background-color: rgba(145, 145, 145, 0.849);
 }
-hr { 
+.news-card-container hr { 
     display: block !important; 
     height: 1px;
     border: 0; 
@@ -82,11 +82,13 @@ hr {
 }
 .news-source{
     height: 30px;
-    width: 100px;
+    /* width: 100px; */
     background-color: rgba(253, 77, 97, 0.658);
     border-radius: 10px;
     text-align: center;
     padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
     font-family: 'Baloo Da 2', cursive;
     color: rgb(255,255,255);
 
