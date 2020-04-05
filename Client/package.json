@@ -29,7 +29,6 @@
     "react-scripts": "3.4.1",
     "react-switch": "^5.0.1",
     "react-toastify": "^5.5.0",
-    "react-toggle-button": "^2.2.0",
     "resolve-url-loader": "^3.1.1",
     "styled-bootstrap-grid": "^3.1.0",
     "styled-components": "^5.0.1"
