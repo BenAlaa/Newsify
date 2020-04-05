@@ -20,6 +20,7 @@ router.get("/", [auth], async (req, res) => {
     const user = await User.findById(userId).select('-password');
     if (!user)  return res.status(404).send({status:404, message: "The User with the given ID was not found."});
 
+    if (user.subscriptions.length === 0) return res.send({status:200, data: [], message: "User had not subscribe to any source"});
     // get user subscriptions
     const sources = user.subscriptions.toString();
 

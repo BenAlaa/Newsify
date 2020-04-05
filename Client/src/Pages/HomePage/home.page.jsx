@@ -22,9 +22,9 @@ class HomePage extends React.Component {
     }
     handlePageChange = page => {
         console.log('clicked page: ', page )
-        this.setState({currentPage: page, isLoading:true})
-        this.loadNews(page)
-
+        this.setState({currentPage: page, isLoading:true}, () => {
+            this.loadNews(page)
+        });
     };
     async loadNews(page) {
         const {currentPage, pageSize} = this.state;

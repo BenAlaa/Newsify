@@ -29,14 +29,14 @@ userSchema.methods.generateAuthToken = function() {
 }
 userSchema.methods.handleSubcription = function(source) {
     // find source
-    const index = this.subscriptions.indexOf(source);
+    const index = this.subscriptions.indexOf(source.id);
     // if found
     if( index !== -1) {
         this.subscriptions.splice(index,1);
         return 'Source UnSubscribed Successfully'
     }
     // if not found
-    this.subscriptions.push(source);
+    this.subscriptions.push(source.id);
     return 'Source Subscribed Successfully'
 }
 const User = mongoose.model("User", userSchema);
