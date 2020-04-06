@@ -1,0 +1,9 @@
+.error-container{
+    display: flex;
+    justify-content: center;
+    font-family: 'Baloo Da 2', cursive;
+    font-size: 50px;
+    font-weight: 600;
+    margin-top: 20vh;
+    color: rgb(253,77,98);
+}
