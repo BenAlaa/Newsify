@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Row, Col} from 'styled-bootstrap-grid';
+import SourcesList from '../../Components/SourcesList/sourcesList.component';
 import Pagination from "react-js-pagination";
-import SourceCard from '../../Components/SourceCard/sourceCard.component';
+import Loader from '../../Components/Common/SpinningLoader/spinningLoader.component';
+import Error from '../../Components/Error/error.component';
 import {getSources, editSubscription} from '../../Services/source.service';
 import './sources.styles.css';
 
@@ -18,6 +19,7 @@ class SourcesPage extends Component {
         }
     }
     async componentDidMount() {
+        document.title = "Sources"
         this.loadSources();
     }
     handlePageChange = page => {
@@ -48,48 +50,17 @@ class SourcesPage extends Component {
                     currentPage: page,
                     isLoading: false
                 });
-            else this.setState({isLoading: false, error: 'SomeThing Wrong happened, Please try again'});
+            else this.setState({isLoading: false, error: 'SomeThing Wrong happened, Please check your connection try again'});
         })
-        .catch(err => this.setState({isLoading: false, error: 'SomeThing Wrong happened, Please try again'})) ; 
+        .catch(err => this.setState({isLoading: false, error: 'SomeThing Wrong happened, Please check your connection try again'})) ; 
     }
     render() { 
         const {sources, currentPage, totalSourcesCount, pageSize, isLoading, error} = this.state
         return ( 
             <div className="sources-page-container">
-                {error !== '' && 
-                    <div className="error-container">{error}</div>
-                }
-                {isLoading && 
-                    <div className="loader-container">
-                        <div className="spinner-border text-secondary" role="status">
-                            <span className="sr-only">Loading...</span>
-                        </div>
-                    </div>
-                }
-                {!isLoading && error === '' &&
-                    <div className="sources-container">
-                        <Row>
-                            {sources.map(source => {
-                                const {name, description, url, category, language, country, isSubscribed} = source;
-                                return (
-                                    <Col col={12} xs={12} sm={12} md={12} lg={6} xl={4} key={source.id}>
-                                        <SourceCard
-                                            name={name}
-                                            description={description}
-                                            url={url}
-                                            category={category}
-                                            language={language}
-                                            country={country}
-                                            isSubscribed={isSubscribed}
-                                            handleSubcribeChange={() => this.handleSubcribeChange(source)}
-                                        />
-                                    </Col>
-                                    
-                                )
-                            })}
-                        </Row>
-                    </div>
-                }
+                {error !== '' && <Error error={error} />}
+                {isLoading &&  <Loader /> }
+                {!isLoading && error === '' && <SourcesList sources={sources} handleSubcribeChange={this.handleSubcribeChange} />}
                 <div className="pagination-container">
                     {!isLoading && error === '' && 
                         <Pagination

@@ -1,62 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Baloo+Da+2');
 .home-container {
     height: 100vh;
     padding-top: 150px;
     padding-left: calc(10vw) !important;
     padding-right: calc(10vw) !important;
-}
-.error-container,
-.message-container{
-    display: flex;
-    justify-content: center;
-    font-family: 'Baloo Da 2', cursive;
-    font-size: 50px;
-    font-weight: 600;
-    margin-top: 20vh;
-    color: rgb(253,77,98);
-}
-.message-container .warrning{
-    display: flex;
-    justify-content: center;
-}
-.go-to-sources-btn{
-    height: 50px;
-    width: 200px;
-    margin-top: 50px;
-    padding: 12px;
-    display: flex;
-    font-size: 18px;
-    font-weight: 500;
-    justify-content: center;
-    color: rgb(255,255,255);
-    font-family: 'Baloo Da 2', cursive;
-    background-color: rgb(45, 44, 58);
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 250ms ease-in-out;
-    -webkit-box-shadow: 6px 0px 19px 0px rgba(50, 50, 50, 0.38);
-    -moz-box-shadow:    6px 0px 19px 0px rgba(50, 50, 50, 0.38);
-    box-shadow:         6px 0px 19px 0px rgba(50, 50, 50, 0.38);
-}
-.go-to-sources-btn:hover{
-    text-decoration: none;
-    color: rgb(255,255,255);
-    background-color: rgb(253, 77, 98);
-    transform: scale(1.05);
-}
-.loader-container{
-    display: flex;
-    justify-content: center;
-    margin-top: 20vh;
-}
-.spinner-border{
-    height: 150px !important;
-    width: 150px !important;
-    font-size: 50px;
-    color: rgb(253,77,98) !important;
-}
-.spinner-border span{
-    color: rgb(253,77,98) !important;
 }
 .pagination-container{
     display: flex;

@@ -12,7 +12,9 @@ class LoginPage extends React.Component {
             isLogin: true,
             isRegister: false
         }
-        // this.handleTapChange = this.handleTapChange.bind(this);
+    }
+    componentDidMount(){
+        document.title = "Login - Register";
     }
     handleTapChange(tap) {
         let {isLogin, isRegister} = this.state

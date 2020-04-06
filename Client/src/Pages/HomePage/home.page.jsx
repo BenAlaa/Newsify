@@ -1,7 +1,9 @@
 import React from 'react';
-import { Row, Col} from 'styled-bootstrap-grid';
-import NewsCard from '../../Components/NewsCard/newsCard.component';
+import NewsList from '../../Components/NewsList/newsList.component'
 import Pagination from "react-js-pagination";
+import Loader from '../../Components/Common/SpinningLoader/spinningLoader.component';
+import Message from '../../Components/Message/newsMessage.component';
+import Error from '../../Components/Error/error.component';
 import {getNews} from '../../Services/news.service';
 import './home.styles.css';
 
@@ -18,6 +20,7 @@ class HomePage extends React.Component {
         }
     }
     async componentDidMount() {
+        document.title = "Home"
         this.loadNews();
     }
     handlePageChange = page => {
@@ -37,56 +40,19 @@ class HomePage extends React.Component {
                     currentPage: page,
                     isLoading: false
                 });
-            else this.setState({isLoading: false, error: 'SomeThing Wrong happened, Please try again'});
+            else this.setState({isLoading: false, error: 'SomeThing Wrong happened, Please check your connection try again'});
         })
-        .catch(err => this.setState({isLoading: false, error: "SomeThing Wrong happened, Please try again..."}));
+        .catch(err => this.setState({isLoading: false, error: "SomeThing Wrong happened, Please check your connection try again..."}));
     }
     render() { 
         const {news, currentPage, totalNewsCount, pageSize, isLoading, error} = this.state;
         return ( 
             <div className="home-container">
-                { !news && 
-                    <div className="message-container row">
-                        <Col col={12}>
-                            <div className="warrning ">You didn't subscribe to any source!, Please subcribe first</div>
-                        </Col>
-                        
-                        <div className="go-to-sources-btn" onClick={() => this.props.history.push('/sources')} >Go to Sources</div>
-                    </div>
-                }
-                {error !== '' && 
-                    <div className="error-container">{error}</div>
-                }
-                {isLoading && 
-                    <div className="loader-container">
-                        <div className="spinner-border text-secondary" role="status">
-                            <span className="sr-only">Loading...</span>
-                        </div>
-                    </div>
-                }
+                { !news &&  <Message {...this.props}/> }
+                {error !== '' && <Error error={error} /> }
+                {isLoading && <Loader/>}
                 {!isLoading && error === '' && news?.length > 0 &&
-                    <div className="news-container">
-                        <Row>
-                            {news.map(news => {
-                                const {title, description, content, url, urlToImage, source, publishedAt} = news;
-                                return (
-                                    <Col col={12} xs={12} sm={12} md={12} lg={6} xl={4} key={news.title}>
-                                        <NewsCard
-                                            title={title}
-                                            description={description}
-                                            content={content}
-                                            url={url}
-                                            urlToImage={urlToImage}
-                                            source={source.name}
-                                            publishedAt={publishedAt}
-                                        />
-                                    </Col>
-                                    
-                                )
-                            })}
-                        </Row>
-                        
-                    </div>
+                    <NewsList news={news} />
                 }
                 <div className="pagination-container">
                     {!isLoading && error === '' && news &&
