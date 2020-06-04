@@ -19,7 +19,7 @@ class SourcesPage extends Component {
         }
     }
     async componentDidMount() {
-        document.title = "Sources"
+        document.title = "Newsify | Sources"
         this.loadSources();
     }
     handlePageChange = page => {

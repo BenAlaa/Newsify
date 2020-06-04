@@ -20,7 +20,7 @@ class HomePage extends React.Component {
         }
     }
     async componentDidMount() {
-        document.title = "Home"
+        document.title = "Newsify | Home"
         this.loadNews();
     }
     handlePageChange = page => {
