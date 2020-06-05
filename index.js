@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const cors = require('cors');
+const path = require('path');
 const express = require("express");
 const app = express();
 const config = require('./Config/config.json');
@@ -26,10 +27,19 @@ app.use("/api/news", news);
 app.use("/api/sources", sources);
 app.use("/api/subscribe", subscriptions);
 
+// Serve static assets if in production
+if(process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('client/build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+  })
+}
+
 // Set Port
 const port = process.env.PORT || 4000;
 const server = app.listen(port, () => {
-  console.log(`API listening on port ${port}...`);
+  console.log(`Server listening on port ${port}...`);
 });
 
 module.exports = server;
