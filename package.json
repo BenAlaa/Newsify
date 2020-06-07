@@ -4,12 +4,13 @@
   "description": "Web app to preview the latest global news and articles and enable the user to subscribe to different publisher useing React, NodeJs, MongoDb",
   "main": "index.js",
   "scripts": {
-    "client-install": "npm install --prefix Client",
-    "start": "node index",
-    "server": "nodemon index",
-    "client": "npm start --prefix Client",
+    "client-install": "npm install --prefix client",
+    "start": "node index.js",
+    "server": "nodemon index.js --exec babel-node --presets babel-preset-env",
+    "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix Client && npm run build --prefix Client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -23,16 +24,19 @@
   "homepage": "https://github.com/BenAlaa/Newsify#readme",
   "dependencies": {
     "@hapi/joi": "^17.1.1",
+    "babel-node": "0.0.1-security",
     "bcrypt": "^4.0.1",
     "body-parser": "^1.19.0",
     "concurrently": "^5.2.0",
     "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
     "mongoose": "^5.9.7",
     "newsapi": "^2.4.0",
     "nodemon": "^2.0.2"
+  },
+  "devDependencies": {
+    "@babel/node": "^7.10.1"
   }
 }
