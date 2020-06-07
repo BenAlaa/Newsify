@@ -5,12 +5,11 @@
   "main": "index.js",
   "scripts": {
     "client-install": "npm install --prefix Client",
-    "start": "node index.js",
-    "server": "nodemon index.js ",
+    "start": "node index",
+    "server": "nodemon index",
     "client": "npm start --prefix Client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix Client && npm run build --prefix Client",
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
