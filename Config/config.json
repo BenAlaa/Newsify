@@ -1,3 +1,3 @@
 {
-    "dbUri" : "mongodb://localhost/newsify"
+    "dbUri" : "mongodb+srv://newsify_user:newsify_user@cluster0-vhhxg.mongodb.net/newsify?retryWrites=true&w=majority"
 }
